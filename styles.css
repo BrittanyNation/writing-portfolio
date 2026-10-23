@@ -1,0 +1,253 @@
+/* Writing Portfolio - Brittany Nation
+   Hand-written CSS, no frameworks. Cream and ink palette. */
+
+:root {
+  --cream: #FAF5EB;
+  --paper: #FFFDF7;
+  --ink: #2B241A;
+  --muted: #6F6350;
+  --accent: #A8641C;
+  --accent-dark: #8A5213;
+  --accent-soft: #F4E8D2;
+  --line: #E6DAC2;
+  --radius: 12px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 22px 64px;
+}
+
+.wrap-wide {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 22px 64px;
+}
+
+/* Slim portfolio bar on sample pages */
+.sample-bar {
+  background: var(--ink);
+  color: var(--cream);
+  font-size: 13.5px;
+  letter-spacing: 0.02em;
+}
+.sample-bar .bar-in {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 9px 22px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.sample-bar a { color: #F0D9AE; text-decoration: none; }
+.sample-bar a:hover { text-decoration: underline; }
+
+/* Site header (index) */
+header.site {
+  padding: 64px 0 8px;
+  text-align: left;
+}
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0 0 10px;
+}
+h1, h2, h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--ink);
+}
+h1 { font-size: 40px; margin: 0 0 14px; }
+h2 { font-size: 27px; margin: 40px 0 12px; }
+h3 { font-size: 20px; margin: 26px 0 8px; }
+p { margin: 0 0 16px; }
+.lede { font-size: 19px; color: var(--muted); max-width: 620px; }
+
+a { color: var(--accent-dark); }
+
+/* Sample cards on the index */
+.cards { display: grid; gap: 18px; margin-top: 30px; }
+@media (min-width: 720px) {
+  .cards { grid-template-columns: 1fr 1fr 1fr; }
+}
+.card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px 22px;
+  display: flex;
+  flex-direction: column;
+}
+.card .tag {
+  align-self: flex-start;
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+.card h3 { margin: 0 0 8px; font-size: 20px; }
+.card p { color: var(--muted); font-size: 15.5px; flex: 1; }
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  margin-top: 8px;
+  text-align: center;
+}
+.btn:hover { background: var(--accent-dark); }
+.btn-ghost {
+  background: transparent;
+  color: var(--accent-dark);
+  border: 1.5px solid var(--accent);
+}
+.btn-ghost:hover { background: var(--accent-soft); }
+
+/* Article / guide body */
+article.guide, article.post { padding-top: 42px; }
+.byline { color: var(--muted); font-size: 14.5px; margin-bottom: 26px; }
+ul, ol { margin: 0 0 18px; padding-left: 24px; }
+li { margin-bottom: 8px; }
+.checklist { list-style: none; padding-left: 0; }
+.checklist li {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 14px 10px 40px;
+  position: relative;
+}
+.checklist li::before {
+  content: "";
+  position: absolute;
+  left: 14px; top: 15px;
+  width: 13px; height: 13px;
+  border: 2px solid var(--accent);
+  border-radius: 3px;
+}
+ol.steps > li { margin-bottom: 14px; }
+ol.steps > li::marker { font-weight: 700; color: var(--accent-dark); }
+.note {
+  background: var(--accent-soft);
+  border-radius: 8px;
+  padding: 14px 18px;
+  font-size: 15.5px;
+  margin: 20px 0;
+}
+.note strong { color: var(--accent-dark); }
+code {
+  background: #F1E9D6;
+  padding: 1px 6px;
+  border-radius: 5px;
+  font-size: 0.92em;
+  font-family: Consolas, "Courier New", monospace;
+}
+
+/* Copywriting sample pieces */
+.landing-frame {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin: 24px 0 8px;
+}
+.landing-hero {
+  background: linear-gradient(160deg, #F7E7C3 0%, #F1D9A8 100%);
+  text-align: center;
+  padding: 52px 28px 44px;
+}
+.landing-hero .brand {
+  font-family: Georgia, serif;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 13px;
+  color: var(--accent-dark);
+  margin-bottom: 16px;
+}
+.landing-hero h2 { font-size: 38px; margin: 0 0 12px; }
+.landing-hero p { color: #5C4B2E; font-size: 18px; max-width: 520px; margin: 0 auto 24px; }
+.benefits {
+  display: grid;
+  gap: 0;
+}
+@media (min-width: 720px) {
+  .benefits { grid-template-columns: 1fr 1fr 1fr; }
+}
+.benefit { padding: 26px 24px; border-top: 1px solid var(--line); }
+.benefit + .benefit { border-left: 1px solid var(--line); }
+@media (max-width: 719px) {
+  .benefit + .benefit { border-left: none; }
+}
+.benefit h3 { margin: 0 0 6px; font-size: 18px; }
+.benefit p { color: var(--muted); font-size: 15px; margin: 0; }
+.testimonial {
+  border-top: 1px solid var(--line);
+  padding: 30px 34px;
+  text-align: center;
+}
+.testimonial blockquote {
+  font-family: Georgia, serif;
+  font-size: 20px;
+  font-style: italic;
+  margin: 0 0 10px;
+}
+.testimonial .who { color: var(--muted); font-size: 14px; }
+.landing-cta {
+  border-top: 1px solid var(--line);
+  background: var(--accent-soft);
+  text-align: center;
+  padding: 32px 24px 38px;
+}
+.landing-cta h3 { margin-top: 0; }
+
+.email-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 26px 28px;
+  margin: 18px 0;
+}
+.email-card .meta {
+  font-size: 13.5px;
+  color: var(--muted);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+.email-card .meta strong { color: var(--ink); }
+.email-card .sign { color: var(--muted); }
+
+footer.site {
+  border-top: 1px solid var(--line);
+  margin-top: 56px;
+  padding-top: 22px;
+  color: var(--muted);
+  font-size: 14px;
+}
